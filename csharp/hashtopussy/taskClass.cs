@@ -317,7 +317,8 @@ namespace hashtopussy
                     {
 
                         chunkStart = Math.Floor(singlePacket[0].statusPackets["PROGRESS2"]) / (skip + length) * skip;
-                        chunkPercent = Math.Round((Convert.ToDouble(singlePacket[0].statusPackets["PROGRESS1"]) - chunkStart) / Convert.ToDouble(singlePacket[0].statusPackets["PROGRESS2"] - chunkStart) ,4)* 100;
+                        //chunkPercent = Math.Round((Convert.ToDouble(singlePacket[0].statusPackets["PROGRESS1"]) - chunkStart) / Convert.ToDouble(singlePacket[0].statusPackets["PROGRESS2"] - chunkStart) ,4)* 100;
+                        chunkPercent = Math.Round((Convert.ToDouble(singlePacket[0].statusPackets["PROGRESS1"])) / Convert.ToDouble(singlePacket[0].statusPackets["PROGRESS2"] ), 4) * 100;
 
 
                         receivedZaps = jsC.getRetList(ret, "zaps"); //Check whether the server sent out hashes to zap
